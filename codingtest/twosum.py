@@ -1,5 +1,5 @@
 def twoSum1(nums, target):
-    #반복문을 사용한 방법
+    #ArrayList - 반복문을 사용한 방법
     n = len(nums)  # nums.length
     for i in range(n-1):
         for j in range(i+1, n):
@@ -8,7 +8,7 @@ def twoSum1(nums, target):
     return False
 
 def twoSum2(nums, target):
-    #정렬&투포인터를 사용한 방법
+    #ArrayList - 정렬&투포인터를 사용한 방법
     nums.sort() #시간복잡도 O(n log n) 일단 정렬
     l, r = 0, len(nums)-1
     while l<r:
