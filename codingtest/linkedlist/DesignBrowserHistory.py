@@ -1,7 +1,7 @@
 from codingtest.linkedlist.Node import Node
 
 class ListNode(object):
-    def __init__(self, val=0, next=None, prev=None):
+    def __init__(self, val = 0, next = None, prev = None):
         self.val = val
         self.next = next
         self.prev = prev
@@ -9,8 +9,9 @@ class DesignBrowserHistory(object):
     def __init__(self, homepage):
         self.head = self.current = ListNode(val = homepage)
     def visit(self, url):
-        self.current.next = ListNode(val=url, prev=self.current)
+        self.current.next = ListNode(val = url, prev = self.current)
         self.current = self.current.next
+        return None
     def back(self, steps):
         while steps > 0 and self.current.prev != None:
             steps -= 1
