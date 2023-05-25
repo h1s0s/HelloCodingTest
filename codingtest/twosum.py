@@ -20,6 +20,7 @@ def twoSum2(nums, target):
             return True
     return False
 
+
 if __name__ == "__main__":
     print(twoSum1(nums=[4, 1, 9, 7, 5, 3, 16], target=14))
     print(twoSum2(nums=[2,1,5,7], target=4))
