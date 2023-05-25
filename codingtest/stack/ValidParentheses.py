@@ -12,4 +12,5 @@ def isValid(s):
     return not stack
 
 if __name__ == "__main__":
-    ValidParentheses()
+    s = '{(([]))[]}'
+    print(ValidParentheses(s))
