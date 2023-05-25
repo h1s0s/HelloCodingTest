@@ -1,37 +1,23 @@
 from codingtest.linkedlist.Node import Node
 
-
+class ListNode(object):
+    def __init__(self, val=0, next=None, prev=None):
+        self.val = val
+        self.next = next
+        self.prev = prev
 class DesignBrowserHistory(object):
-    def __init__(self):
-        self.head = None
-        self.tail = None
-
-    #호출시 브라우저는 homepage에서 시작, None을 리턴
-    def BrowserHistory(self, url):
-        new_page = Node(url)
-        if self.head is None:
-            self.head = new_page
-            self.tail = new_page
-        else:
-            self.tail.next = new_page
-            self.tail = self.tail.next
-        return None
-
-    #호출시 현재 page의 앞에있는 페이지는 다 삭제되고, url로 방문(리스트에 추가)
+    def __init__(self, homepage):
+        self.head = self.current = ListNode(val = homepage)
     def visit(self, url):
-        new_page = Node(url)
-        self.head = new_page
-        self.tail = new_page
-        return None
-
-    #steps 수만큼 뒤로가기, 뒤로가기를 할 수 있는 page수가 x이고 step > x면 x번만큼만 뒤로가기.
-    #뒤로가기가 완료하면 현재 url을 리턴한다
+        self.current.next = ListNode(val=url, prev=self.current)
+        self.current = self.current.next
     def back(self, steps):
-        if self.head is None:
-            return None
-        else:
-            current = self.head
-            for _ in range(steps):
-
-
-            #연결리스트에서 전체갯수를 구할 수 있나?
+        while steps > 0 and self.current.prev != None:
+            steps -= 1
+            self.current = self.current.prev
+        return self.current.val
+    def forward(self, steps):
+        while steps > 0 and self.current.next != None:
+            steps -= 1
+            self.current = self.current.next
+        return self.current.val
