@@ -8,7 +8,7 @@ class Queue(object):
         self.instack.append(element) #파이썬의 stack은 pop X -> append
 
     def dequeue(self):
-        if not self.outstack:
-            while self.instack:
+        if not self.outstack: #outstack이 비어있는지? 비어있으면 True, 비어있지 않으면 Fasle
+            while self.instack: #instack에 값이 있으면 True, 없으면 False
                 self.outstack.append(self.instack.pop())
         return self.outstack.pop()
