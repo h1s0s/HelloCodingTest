@@ -1,11 +1,11 @@
 #stack 2개로 queue 구현
 class Queue(object):
     def __init__(self):
-        self.instack=[]
+        self.instack=[] #스택 선언
         self.outstack=[]
 
     def enqueue(self, element):
-        self.instack.append(element)
+        self.instack.append(element) #파이썬의 stack은 pop X -> append
 
     def dequeue(self):
         if not self.outstack:
