@@ -6,6 +6,7 @@ class Queue(object):
 
     def enqueue(self, element):
         self.instack.append(element) #파이썬의 stack은 pop X -> append
+        #시간복잡도는 O(1)
 
     def dequeue(self):
         if not self.outstack: #outstack이 비어있는지? 비어있으면 True, 비어있지 않으면 Fasle
