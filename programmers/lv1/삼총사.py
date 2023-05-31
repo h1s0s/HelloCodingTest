@@ -8,6 +8,7 @@ def solution(number):
     return answer
 
 if __name__ == "__main__":
+    #11,663명/71%/3점
     print(solution([-2, 3, 0, 2, -5]))  # 2
     print(solution([-3, -2, -1, 0, 1, 2, 3]))  # 5
     print(solution([-1, 1, -1, 1]))  # 0

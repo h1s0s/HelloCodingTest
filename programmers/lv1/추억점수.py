@@ -26,6 +26,7 @@ def 다른풀이1(이름, 점수, 사진):
 
 
 if __name__ == "__main__":
+    #7,083명/64%
     name = ["may", "kein", "kain", "radi"]
     yearning = [5, 10, 1, 3]
     photo = [["may", "kein", "kain", "radi"], ["may", "kein", "brin", "deny"], ["kon", "kain", "may", "coni"]]
