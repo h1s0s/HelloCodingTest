@@ -1,7 +1,7 @@
 def solution(n, plans):
     x, y = 1, 1
 
-    #L, R, U, D
+    #L(서), R(동), U(북), D(남) x가 행, y가 열
     dx = [0, 0, -1, 1]
     dy = [-1, 1, 0, 0]
     move_types = ['L', 'R', 'U', 'D']
