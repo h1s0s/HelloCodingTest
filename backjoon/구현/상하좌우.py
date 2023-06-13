@@ -1,8 +1,25 @@
-def solution(n, x):
-    for i in range(n):
-        for j in range(x):
-            print('(', i, ', ', j, ')', end=' ')
-        print()
+def solution(n, plans):
+    x, y = 1, 1
+
+    #L, R, U, D
+    dx = [0, 0, -1, 1]
+    dy = [-1, 1, 0, 0]
+    move_types = ['L', 'R', 'U', 'D']
+
+    for plan in plans:
+        for i in range(len(move_types)):
+            if plan == move_types[i]:
+                nx = x + dx[i]
+                ny = y + dy[i]
+
+        #공간을 벗어나는 경우 무시
+        if nx < 1 or ny < 1 or nx > n or ny > n:
+            continue
+
+        #이동
+        x, y = nx, ny
+
+    return x, y
 
 if __name__ == "__main__":
-    print(solution(4, 4))
+    print(solution(5, "R R R U D D".split()))
